@@ -1,0 +1,173 @@
+# Portfolio Personal - Luis Cascante
+
+## 📋 Estructura del Proyecto
+
+```
+portfolio-luis/
+├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── About.astro
+│   │   ├── Experience.astro
+│   │   ├── Skills.astro
+│   │   ├── Education.astro
+│   │   ├── Contact.astro
+│   │   └── Footer.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── public/
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
+```
+
+## 🚀 Instalación
+
+### 1. Crear el proyecto Astro
+
+```bash
+npm create astro@latest portfolio-luis
+cd portfolio-luis
+```
+
+Selecciona:
+
+- Template: Empty
+- TypeScript: Yes
+- Install dependencies: Yes
+- Git: Yes
+
+### 2. Instalar Tailwind CSS
+
+```bash
+npx astro add tailwind
+# Selecciona "Yes" a todas las opciones
+```
+
+**IMPORTANTE**: No necesitas instalar Angular. Los componentes ya están en Astro puro.
+
+## 📝 Archivos de Configuración
+
+### astro.config.mjs
+
+```javascript
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import angular from "@astrojs/angular";
+
+export default defineConfig({
+  site: "https://tuusuario.github.io",
+  base: "/portfolio-luis",
+  integrations: [tailwind(), angular()],
+});
+```
+
+### package.json (scripts adicionales)
+
+```json
+{
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  }
+}
+```
+
+## 🎨 Características del Diseño
+
+- **Diseño Responsivo**: Se adapta a móviles, tablets y escritorio
+- **Tema Moderno**: Paleta de colores profesional azul/gris
+- **Animaciones Suaves**: Transiciones y efectos hover
+- **Secciones Claras**: Hero, Sobre mí, Experiencia, Habilidades, Educación, Contacto
+- **Optimizado para SEO**: Meta tags y estructura semántica
+- **Performance**: Carga rápida y optimización de imágenes
+
+## 🌐 Deployment en GitHub Pages
+
+### 1. Crear repositorio en GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/tuusuario/portfolio-luis.git
+git push -u origin main
+```
+
+### 2. Instalar gh-pages
+
+```bash
+npm install -D gh-pages
+```
+
+### 3. Configurar GitHub Pages
+
+1. Ve a tu repositorio en GitHub
+2. Settings → Pages
+3. Source: Deploy from a branch
+4. Branch: gh-pages → /(root)
+5. Save
+
+### 4. Deploy
+
+```bash
+npm run deploy
+```
+
+## 🎯 Próximos Pasos
+
+1. **Personalizar colores**: Edita `tailwind.config.mjs` para cambiar la paleta
+2. **Añadir foto**: Coloca tu foto en `/public/profile.jpg`
+3. **Añadir proyectos**: Crea una sección de portfolio con tus proyectos
+4. **Integrar formulario**: Usa Formspree o EmailJS para el formulario de contacto
+5. **Analytics**: Añade Google Analytics o Plausible
+
+## 📧 Contacto en el sitio
+
+El formulario de contacto puede integrarse con:
+
+- **Formspree**: https://formspree.io/
+- **EmailJS**: https://www.emailjs.com/
+- **Netlify Forms**: Si decides usar Netlify
+
+## 🛠️ Comandos Útiles
+
+```bash
+npm run dev          # Servidor de desarrollo
+npm run build        # Construir para producción
+npm run preview      # Preview local del build
+npm run deploy       # Desplegar a GitHub Pages
+```
+
+## 📱 Redes Sociales
+
+Añade tus perfiles en los componentes:
+
+- GitHub
+- LinkedIn
+- Email
+
+## 🎨 Personalización de Colores
+
+En `tailwind.config.mjs`:
+
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#2563eb",
+        secondary: "#1e40af",
+      },
+    },
+  },
+};
+```

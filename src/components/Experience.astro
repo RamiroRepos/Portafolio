@@ -1,0 +1,112 @@
+---
+// src/components/Experience.astro
+const experiences = [
+  {
+    title: "Full-stack Developer",
+    company: "Freelance",
+    location: "San José, Costa Rica",
+    period: "Julio 2023 - Presente",
+    responsibilities: [
+      "Desarrollo de aplicaciones web personalizadas con PHP, Angular, SQL, NoSQL, MongoDB y SQL Server",
+      "Diseño de interfaz de usuario adaptable con SCSS y prácticas web modernas",
+      "Integración y desarrollo de API para soluciones a medida",
+      "Optimización de bases de datos para mejorar el rendimiento y la escalabilidad",
+      "Colaboración con clientes para ofrecer soluciones técnicas alineadas con el negocio",
+    ],
+  },
+  {
+    title: "Information Technology Administrator",
+    company: "IMESA Sistemas S.A",
+    location: "San José, Costa Rica",
+    period: "Febrero 2022 - Presente",
+    responsibilities: [
+      "Administración de dominios, gestión de cuentas de usuario y creación de políticas de grupo",
+      "Administración de hosting en cPanel y filtrado de correo electrónico",
+      "Mantenimiento preventivo/correctivo y administración de red local",
+      "Asistencia a la gerencia con los requisitos de TI",
+    ],
+  },
+  {
+    title: "Technical Support - HelpDesk",
+    company: "IMESA Sistemas S.A",
+    location: "San José, Costa Rica",
+    period: "Febrero 2022 - Enero 2025",
+    responsibilities: [
+      "Soporte remoto y en sitio para sistemas de punto de venta",
+      "Instalación y mantenimiento de equipos TPV y cableado estructurado",
+      "Gestión de bases de datos y resolución de problemas de equipos",
+      "Experiencia amplia en NP6",
+    ],
+  },
+  {
+    title: "Technical Support - HelpDesk",
+    company: "IMESA Sistemas S.A",
+    location: "San José, Costa Rica",
+    period: "Octubre 2018 - Octubre 2021",
+    responsibilities: [
+      "Soporte remoto e in situ para sistemas de punto de venta",
+      "Instalación y mantenimiento de equipos TPV y cableado estructurado",
+      "Gestión de bases de datos y resolución de problemas de equipos",
+      "Amplia experiencia en NP6",
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">
+      Experiencia Profesional
+    </h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      Casi 8 años de experiencia trabajando con tecnología y sistemas de punto
+      de venta
+    </p>
+
+    <div class="max-w-4xl mx-auto">
+      {
+        experiences.map((exp, index) => (
+          <div class="mb-12 relative pl-8 border-l-2 border-blue-200 hover:border-blue-400 transition">
+            <div class="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full" />
+
+            <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-1">
+                    {exp.title}
+                  </h3>
+                  <p class="text-lg text-blue-600 font-semibold">
+                    {exp.company}
+                  </p>
+                  <p class="text-gray-600">{exp.location}</p>
+                </div>
+                <span class="text-gray-500 font-medium mt-2 md:mt-0">
+                  {exp.period}
+                </span>
+              </div>
+
+              <ul class="space-y-2">
+                {exp.responsibilities.map((resp) => (
+                  <li class="flex items-start">
+                    <svg
+                      class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-gray-700">{resp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
